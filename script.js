@@ -18,6 +18,9 @@ const viewClassicBtn = document.getElementById("viewClassicBtn");
 const filterArrayBtn = document.getElementById("filterArrayBtn");
 const canvasFullscreenBtn = document.getElementById("canvasFullscreenBtn");
 const treePanel = document.querySelector(".tree-panel");
+const projectDesc = document.getElementById("projectDesc");
+const langEnBtn = document.getElementById("langEnBtn");
+const langZhBtn = document.getElementById("langZhBtn");
 
 let rootNode = null;
 let zoomScale = 1;
@@ -33,6 +36,7 @@ let panStartY = 0;
 let panOriginX = 0;
 let panOriginY = 0;
 let pendingCenterNodeId = null;
+let currentLang = "en";
 
 const MIN_ZOOM = 0.2;
 const MAX_ZOOM = 2;
@@ -49,6 +53,19 @@ const demoJson = {
     projects: [{ title: "Tree UI", stars: 12 }, { title: "Parser", stars: 8 }]
   }
 };
+
+const PROJECT_DESC = {
+  en: "JSON Parser Visualize is a lightweight frontend tool for exploring JSON as interactive diagrams.",
+  zh: "JSON Parser Visualize 是一个轻量前端工具，用于将 JSON 结构以可交互图形方式展示。"
+};
+
+function updateLanguageUI() {
+  if (projectDesc) {
+    projectDesc.textContent = PROJECT_DESC[currentLang] || PROJECT_DESC.en;
+  }
+  if (langEnBtn) langEnBtn.classList.toggle("active", currentLang === "en");
+  if (langZhBtn) langZhBtn.classList.toggle("active", currentLang === "zh");
+}
 
 function clampScale(scale) {
   return Math.min(MAX_ZOOM, Math.max(MIN_ZOOM, scale));
@@ -881,6 +898,16 @@ canvasFullscreenBtn.addEventListener("click", () => {
   updateFullscreenUI();
 });
 
+langEnBtn.addEventListener("click", () => {
+  currentLang = "en";
+  updateLanguageUI();
+});
+
+langZhBtn.addEventListener("click", () => {
+  currentLang = "zh";
+  updateLanguageUI();
+});
+
 treeRoot.addEventListener(
   "wheel",
   (event) => {
@@ -927,4 +954,5 @@ window.addEventListener("keydown", (event) => {
 
 syncZoomUI();
 updateFullscreenUI();
+updateLanguageUI();
 loadDemo();
