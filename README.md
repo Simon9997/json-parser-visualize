@@ -2,7 +2,10 @@
 
 ![100% AI Generated](https://img.shields.io/badge/Code-100%25%20AI%20Generated-success)
 
-一个纯前端 JSON 可视化工具，用于把输入的标准 JSON 转成可交互的结构图，并同步输出格式化 JSON。
+一个纯前端 JSON 可视化工具，用于把输入的标准 JSON 转成可交互的结构图。
+
+在线演示：
+- https://simon9997.github.io/json-parser-visualize/
 
 ## 项目做了什么
 
@@ -21,7 +24,6 @@
   - 缩放（20% ~ 200%）
   - 画布拖拽平移
   - 画布全屏模式
-- 输出联动：可视化与右侧格式化 JSON 同步
 
 ## 快速开始（本地运行）
 

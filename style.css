@@ -177,6 +177,32 @@ button:hover {
   cursor: grab;
 }
 
+.tree-canvas-wrap {
+  position: relative;
+}
+
+.canvas-fullscreen-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 5;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  border: 1px solid #c6d1e7;
+  background: #ffffff;
+  color: #2f4470;
+  font-size: 16px;
+  line-height: 1;
+  padding: 0;
+}
+
+.canvas-fullscreen-btn.active {
+  background: #2b4b87;
+  color: #ffffff;
+  border-color: #2b4b87;
+}
+
 .tree-panel.canvas-fullscreen {
   position: fixed;
   inset: 0;
@@ -195,6 +221,7 @@ button:hover {
   flex: 1;
   min-height: 0;
   overflow: auto;
+  padding-top: 48px;
 }
 
 .tree-root.is-panning {

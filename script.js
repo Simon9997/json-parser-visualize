@@ -727,7 +727,9 @@ function updateFullscreenUI() {
   if (!treePanel) return;
   treePanel.classList.toggle("canvas-fullscreen", canvasFullscreen);
   document.body.classList.toggle("canvas-fullscreen-active", canvasFullscreen);
-  canvasFullscreenBtn.textContent = canvasFullscreen ? "退出全屏" : "画布全屏";
+  canvasFullscreenBtn.classList.toggle("active", canvasFullscreen);
+  canvasFullscreenBtn.setAttribute("aria-label", canvasFullscreen ? "退出全屏" : "画布全屏");
+  canvasFullscreenBtn.setAttribute("title", canvasFullscreen ? "退出全屏" : "画布全屏");
 
   if (viewMode === "flow-h") {
     const canvas = treeRoot.querySelector(".viz-canvas.flow-h-tree");

@@ -25,7 +25,6 @@
       <section class="panel tree-panel">
         <div class="panel-title-row">
           <h2>树状结构</h2>
-          <span class="hint">提示：支持流程图/经典树切换，节点均可折叠与拖拽</span>
         </div>
         <div class="zoom-toolbar" aria-label="可视化工具栏">
           <div class="view-switch" role="group" aria-label="可视化模式">
@@ -33,7 +32,6 @@
             <button id="viewFlowHBtn" type="button" class="zoom-btn view-btn">左右图</button>
             <button id="viewClassicBtn" type="button" class="zoom-btn view-btn">经典树</button>
           </div>
-          <button id="canvasFullscreenBtn" type="button" class="zoom-btn ghost">画布全屏</button>
           <button id="filterArrayBtn" type="button" class="zoom-btn ghost filter-btn">仅数组路径</button>
           <button id="collapseAllBtn" type="button" class="zoom-btn ghost">全部折叠</button>
           <button id="expandAllBtn" type="button" class="zoom-btn ghost">全部展开</button>
@@ -43,7 +41,10 @@
           <button id="zoomResetBtn" type="button" class="zoom-btn ghost">100%</button>
           <span id="zoomLabel" class="zoom-label">100%</span>
         </div>
-        <div id="treeRoot" class="tree-root" aria-live="polite"></div>
+        <div class="tree-canvas-wrap">
+          <button id="canvasFullscreenBtn" type="button" class="canvas-fullscreen-btn" aria-label="画布全屏" title="画布全屏">⛶</button>
+          <div id="treeRoot" class="tree-root" aria-live="polite"></div>
+        </div>
       </section>
 
     </main>
