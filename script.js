@@ -884,7 +884,16 @@ canvasFullscreenBtn.addEventListener("click", () => {
 treeRoot.addEventListener(
   "wheel",
   (event) => {
-    if (!event.ctrlKey && !event.metaKey) return;
+    if (!event.ctrlKey && !event.metaKey) {
+      if (canvasFullscreen && (Math.abs(event.deltaX) > 0 || event.shiftKey)) {
+        event.preventDefault();
+        const scale = Math.max(zoomScale, 0.01);
+        const dx = Math.abs(event.deltaX) > 0 ? event.deltaX : event.deltaY;
+        panX -= dx / scale;
+        applyZoom();
+      }
+      return;
+    }
     event.preventDefault();
     const delta = event.deltaY > 0 ? -ZOOM_STEP : ZOOM_STEP;
     setZoom(zoomScale + delta);
