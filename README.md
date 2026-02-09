@@ -1,5 +1,7 @@
 # JSON Visual Flow Editor
 
+![100% AI Generated](https://img.shields.io/badge/Code-100%25%20AI%20Generated-success)
+
 一个纯前端 JSON 可视化工具，用于把输入的标准 JSON 转成可交互的结构图，并同步输出格式化 JSON。
 
 ## 项目做了什么
