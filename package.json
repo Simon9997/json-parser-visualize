@@ -1,0 +1,10 @@
+{
+  "name": "json-tree-parser",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node tests/run-tests.mjs"
+  },
+  "description": "Interactive JSON visual flow editor with tree/flow views, collapse, zoom, pan and array-path filter"
+}

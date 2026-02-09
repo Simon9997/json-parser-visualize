@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JSON 树状解析器</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="app-header">
+        <h1>JSON 树状解析器</h1>
+        <p>输入标准 JSON，支持流程图和经典树两种可视化（均可折叠与拖拽）。</p>
+      </header>
+
+      <section class="panel input-panel">
+        <label for="jsonInput">JSON 输入</label>
+        <textarea id="jsonInput" spellcheck="false" placeholder='例如：{"name":"Alice","skills":["js","css"]}'></textarea>
+        <div class="actions">
+          <button id="parseBtn" type="button">解析 JSON</button>
+          <button id="resetBtn" type="button" class="ghost">重置示例</button>
+        </div>
+        <p id="errorMsg" class="error" role="alert" aria-live="polite"></p>
+      </section>
+
+      <section class="panel tree-panel">
+        <div class="panel-title-row">
+          <h2>树状结构</h2>
+          <span class="hint">提示：支持流程图/经典树切换，节点均可折叠与拖拽</span>
+        </div>
+        <div class="zoom-toolbar" aria-label="可视化工具栏">
+          <div class="view-switch" role="group" aria-label="可视化模式">
+            <button id="viewFlowBtn" type="button" class="zoom-btn view-btn active">上下图</button>
+            <button id="viewFlowHBtn" type="button" class="zoom-btn view-btn">左右图</button>
+            <button id="viewClassicBtn" type="button" class="zoom-btn view-btn">经典树</button>
+          </div>
+          <button id="canvasFullscreenBtn" type="button" class="zoom-btn ghost">画布全屏</button>
+          <button id="filterArrayBtn" type="button" class="zoom-btn ghost filter-btn">仅数组路径</button>
+          <button id="collapseAllBtn" type="button" class="zoom-btn ghost">全部折叠</button>
+          <button id="expandAllBtn" type="button" class="zoom-btn ghost">全部展开</button>
+          <button id="zoomOutBtn" type="button" class="zoom-btn">-</button>
+          <input id="zoomRange" type="range" min="20" max="200" step="5" value="100" />
+          <button id="zoomInBtn" type="button" class="zoom-btn">+</button>
+          <button id="zoomResetBtn" type="button" class="zoom-btn ghost">100%</button>
+          <span id="zoomLabel" class="zoom-label">100%</span>
+        </div>
+        <div id="treeRoot" class="tree-root" aria-live="polite"></div>
+      </section>
+
+      <section class="panel output-panel">
+        <label for="jsonOutput">格式化 JSON 输出</label>
+        <textarea id="jsonOutput" readonly></textarea>
+      </section>
+    </main>
+
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>
