@@ -40,42 +40,6 @@ body.canvas-fullscreen-active {
   font-size: 28px;
 }
 
-.desc-row {
-  margin-top: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.project-desc {
-  margin: 0;
-  color: var(--muted);
-}
-
-.lang-switch {
-  display: inline-flex;
-  border: 1px solid #c6d1e7;
-  border-radius: 9px;
-  overflow: hidden;
-}
-
-.lang-btn {
-  border: 0;
-  border-radius: 0;
-  padding: 6px 10px;
-  min-width: 54px;
-  background: #f0f4fb;
-  color: #33435f;
-  font-weight: 700;
-}
-
-.lang-btn.active {
-  background: #2b4b87;
-  color: #fff;
-}
-
 .panel {
   background: var(--panel);
   border: 1px solid var(--line);

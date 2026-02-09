@@ -4,42 +4,42 @@
 
 ![100% AI Generated](https://img.shields.io/badge/Code-100%25%20AI%20Generated-success)
 
-A lightweight frontend tool for visualizing JSON as interactive diagrams.
+一个轻量前端工具，用于将 JSON 结构以可交互图形方式展示。
 
-Demo:
+在线演示：
 - https://simon9997.github.io/json-parser-visualize/
 
-## Features
+## 功能特性
 
-- Standard JSON parsing (`JSON.parse`)
-- Three views:
-  - Vertical flow
-  - Horizontal flow (field-anchored connectors)
-  - Classic tree
-- Interactions:
-  - Collapse / expand nodes (default: collapsed except root)
-  - Collapse all / expand all
-  - Array-path-only filter
-- Canvas controls:
-  - Zoom (20% ~ 200%)
-  - Pan
-  - Canvas fullscreen mode
+- 标准 JSON 解析（`JSON.parse`）
+- 三种视图：
+  - 上下图
+  - 左右图（字段锚点连线）
+  - 经典树
+- 交互能力：
+  - 节点折叠/展开（默认根节点展开，其余折叠）
+  - 一键全部折叠 / 一键全部展开
+  - 仅数组路径过滤
+- 画布能力：
+  - 缩放（20% ~ 200%）
+  - 平移
+  - 画布全屏模式
 
-## Quick Start
+## 快速开始
 
 ```bash
 cd <project-root>
 ./start.sh
 ```
 
-Open:
+访问：
 - http://127.0.0.1:8080
 
-## Deployment
+## 部署
 
-This is a static frontend project and can be deployed to any static host.
+本项目是纯静态前端，可部署到任意静态托管环境。
 
-### 1) Local static server
+### 1) 本地静态服务
 
 ```bash
 cd <project-root>
@@ -48,13 +48,13 @@ python3 -m http.server 8080
 
 ### 2) Nginx
 
-1. Upload files to a web root (example: `/var/www/json-tree-parser`):
+1. 上传文件到网站目录（示例：`/var/www/json-tree-parser`）：
 - `index.html`
 - `style.css`
 - `script.js`
 - `jsonTreeCore.js`
 
-2. Nginx config:
+2. Nginx 配置示例：
 
 ```nginx
 server {
@@ -70,7 +70,7 @@ server {
 }
 ```
 
-3. Reload:
+3. 重新加载：
 
 ```bash
 nginx -t
@@ -93,16 +93,16 @@ docker run -d --name json-tree-parser -p 8080:80 json-tree-parser:1.0.0
 
 ### 4) Vercel / Netlify
 
-- Import the repository
-- Leave Build Command empty
-- Set Output Directory to `.`
+- 导入仓库
+- Build Command 留空
+- Output Directory 设置为 `.`
 
-## Test
+## 测试
 
 ```bash
 npm test
 ```
 
-## More
+## 更多
 
-- Detailed deployment guide: `DEPLOYMENT.md`
+- 详细部署文档：`DEPLOYMENT.md`
