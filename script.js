@@ -1,7 +1,6 @@
 import { parseJsonToTree, treeToJsonString } from "./jsonTreeCore.js";
 
 const jsonInput = document.getElementById("jsonInput");
-const jsonOutput = document.getElementById("jsonOutput");
 const parseBtn = document.getElementById("parseBtn");
 const resetBtn = document.getElementById("resetBtn");
 const errorMsg = document.getElementById("errorMsg");
@@ -711,12 +710,7 @@ function createClassicNode(node, isRoot = false) {
 }
 
 function updateOutput() {
-  if (!rootNode) {
-    jsonOutput.value = "";
-    return;
-  }
-
-  jsonOutput.value = treeToJsonString(rootNode, 2);
+  return treeToJsonString(rootNode, 2);
 }
 
 function updateViewButtons() {

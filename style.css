@@ -601,15 +601,12 @@ button:hover {
     grid-template-columns: 1fr 1fr;
   }
 
-  .app-header,
-  .input-panel,
-  .tree-panel,
-  .output-panel {
+  .app-header {
     grid-column: span 2;
   }
 
   .input-panel,
-  .output-panel {
+  .tree-panel {
     grid-column: span 1;
   }
 }
