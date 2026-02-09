@@ -625,15 +625,6 @@ button:hover {
 
 @media (min-width: 920px) {
   .app {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .app-header {
-    grid-column: span 2;
-  }
-
-  .input-panel,
-  .tree-panel {
-    grid-column: span 1;
+    grid-template-columns: 1fr;
   }
 }
