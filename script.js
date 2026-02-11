@@ -110,6 +110,15 @@ function endPan() {
   treeRoot.classList.remove("is-panning");
 }
 
+function resetCanvasViewportState() {
+  endPan();
+  panX = 0;
+  panY = 0;
+  panOriginX = 0;
+  panOriginY = 0;
+  pendingCenterNodeId = null;
+}
+
 function formatLeaf(node) {
   if (node.type === "string") return `"${node.value}"`;
   return String(node.value);
@@ -807,6 +816,7 @@ function render() {
 
 function parseInput() {
   errorMsg.textContent = "";
+  resetCanvasViewportState();
 
   try {
     rootNode = parseJsonToTree(jsonInput.value);
